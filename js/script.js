@@ -63,7 +63,7 @@
   let prevListItem;
 
   nav.addEventListener("click", function(event) {
-    if (prevListItem !== undefined) {
+    if (prevListItem !== undefined && prevListItem.id !== event.target.id) {
       prevListItem.classList.remove("active");
     }
 
