@@ -58,23 +58,22 @@
   ];
 
   ///DOM
-  let nav = document.getElementById("nav-list"),
-    main = document.getElementById("main"),
-    prevListItem;
+  const nav = document.getElementById("nav-list");
+  const main = document.getElementById("main");
+  let prevListItem;
 
   nav.addEventListener("click", function(event) {
-    if (prevListItem !== undefined && prevListItem.id !== event.target.id) {
+    if (prevListItem !== undefined) {
       prevListItem.classList.remove("active");
     }
 
-    if ((event.target.name = "LI")) {
+    if (event.target.classList.contains("characters-nav__item")) {
       event.target.classList.toggle("active");
       prevListItem = event.target;
     }
 
     return data.filter(function(item) {
       if (event.target.id === item.name) {
-        console.log(item.imgPath);
         return (main.innerHTML = `<h2 id="character-heading" class="characters-content__heading">
         ${item.name}
       </h2>
