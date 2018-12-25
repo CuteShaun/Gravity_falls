@@ -57,6 +57,7 @@
     }
   ];
 
+  ///DOM
   let nav = document.getElementById("nav-list"),
     main = document.getElementById("main"),
     prevListItem;
